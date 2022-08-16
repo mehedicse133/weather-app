@@ -1,0 +1,24 @@
+{% extends 'base.html %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for i in city_weather %}
+        <div class="col-sm-2">
+
+            <div class="card mt-3 border shadow-lg p-2 bg-light" style="width: 8rem;">
+                <img height="40" width="160" src="https://api.openweathermap.org/img/w/{{i.image}}.png"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <span>{{i.city}}</span>-<span>{{i.temp}} °c</span>
+                    <span>{{i.weather}}</span>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+{% endblock %}
